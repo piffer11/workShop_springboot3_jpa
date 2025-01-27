@@ -8,11 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.gustavoPiffer.corse.entities.Category;
 import com.gustavoPiffer.corse.entities.Order;
+import com.gustavoPiffer.corse.entities.Product;
 import com.gustavoPiffer.corse.entities.User;
-import com.gustavoPiffer.corse.entities.enums.Category;
 import com.gustavoPiffer.corse.entities.enums.OrderStatus;
-import com.gustavoPiffer.corse.entities.enums.Product;
 import com.gustavoPiffer.corse.repositories.CategoryRepository;
 import com.gustavoPiffer.corse.repositories.OrderRepository;
 import com.gustavoPiffer.corse.repositories.ProductRepository;
@@ -50,6 +50,16 @@ public class TesteConfig implements CommandLineRunner {
 		
 		categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
 		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		p1.getCategories().add(cat2);
+		p2.getCategories().add(cat1);
+		p2.getCategories().add(cat3);
+		p3.getCategories().add(cat3);
+		p4.getCategories().add(cat3);
+		p5.getCategories().add(cat2);
+		
+		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+
 		
 		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
 		User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");

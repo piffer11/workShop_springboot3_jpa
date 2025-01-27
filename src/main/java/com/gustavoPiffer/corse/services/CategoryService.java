@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gustavoPiffer.corse.entities.enums.Category;
+import com.gustavoPiffer.corse.entities.Category;
 import com.gustavoPiffer.corse.repositories.CategoryRepository;
 
 

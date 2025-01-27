@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gustavoPiffer.corse.entities.enums.Product;
+import com.gustavoPiffer.corse.entities.Product;
 import com.gustavoPiffer.corse.repositories.ProductRepository;
 
 
